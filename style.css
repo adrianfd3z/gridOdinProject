@@ -1,0 +1,53 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#container {
+    display: grid;
+    grid-gap: 0;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    border: 1px solid black;
+    width: 90vmin;
+    height: 90vmin;
+}
+
+.grid-item {
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease; /* Transición suave del color */
+}
+
+/* Hover effect: changes color when hovering */
+.grid-item:hover {
+    background-color: lightblue; /* Color al hacer hover */
+}
+
+/* If the grid item is painted gray, hover effect should not apply */
+.grid-item.permanently-painted:hover {
+    background-color: gray; /* Keep gray if painted */
+}
+
+form {
+    margin-bottom: 20px;
+}
